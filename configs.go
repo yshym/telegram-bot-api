@@ -1230,7 +1230,7 @@ func (config InlineConfig) params() (Params, error) {
 	params := make(Params)
 
 	params["inline_query_id"] = config.InlineQueryID
-	params.AddNonZero("cache_time", config.CacheTime)
+	params["cache_time"] = strconv.Itoa(config.CacheTime)
 	params.AddBool("is_personal", config.IsPersonal)
 	params.AddNonEmpty("next_offset", config.NextOffset)
 	params.AddNonEmpty("switch_pm_text", config.SwitchPMText)
